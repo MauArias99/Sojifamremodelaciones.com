@@ -8,18 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --gold: #F5A623;
-  --gold-dark: #c9871a;
-  --black: #0a0a0a;
-  --dark: #111111;
-  --dark2: #1a1a1a;
-  --dark3: #222222;
-  --white: #ffffff;
-  --gray: #888888;
-  --radius: 4px;
-  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-}
+:root{--gold:#F5A623;--gold-dark:#c9871a;--black:#0a0a0a;--dark:#111111;--dark2:#1a1a1a;--dark3:#222222;--white:#ffffff;--gray:#888888;--radius:4px;--transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
 *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
@@ -27,25 +16,23 @@ body{font-family:'Montserrat',sans-serif;background:var(--black);color:var(--whi
 /* ── NAVBAR ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4%;display:flex;align-items:center;justify-content:space-between;height:70px;background:rgba(10,10,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,166,35,0.2);transition:var(--transition)}
 nav.scrolled{height:60px;border-bottom-color:rgba(245,166,35,0.4)}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-logo span{color:var(--gold)}
 .nav-logo small{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:500;letter-spacing:3px;color:var(--gray);display:block;line-height:1;margin-top:-4px}
 .nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
 .nav-links>li{position:relative}
-.nav-links a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:var(--transition);display:flex;align-items:center;gap:4px;padding:4px 0}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:var(--transition);display:flex;align-items:center;gap:4px;padding:4px 0;cursor:pointer}
 .nav-links a:hover{color:var(--white)}
 .nav-links a .arrow{font-size:8px;transition:var(--transition)}
-
-/* Dropdown */
-.dropdown-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:var(--dark2);border:1px solid rgba(245,166,35,0.2);border-radius:6px;min-width:220px;padding:8px 0;z-index:200;box-shadow:0 16px 40px rgba(0,0,0,0.6)}
-.dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:var(--dark2);border-left:1px solid rgba(245,166,35,0.2);border-top:1px solid rgba(245,166,35,0.2);transform:translateX(-50%) rotate(45deg)}
+.dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--dark2);border:1px solid rgba(245,166,35,0.2);border-radius:6px;min-width:230px;padding:16px 0 8px;z-index:200;box-shadow:0 16px 40px rgba(0,0,0,0.6)}
+.dropdown-menu::before{content:'';position:absolute;top:0;left:0;right:0;height:16px;background:transparent}
 .nav-links li.has-drop:hover .dropdown-menu{display:block}
+.nav-links li.has-drop .dropdown-menu:hover{display:block}
 .nav-links li.has-drop:hover .arrow{transform:rotate(180deg)}
 .dropdown-menu a{display:flex;align-items:center;gap:10px;padding:11px 20px;font-size:12px;color:rgba(255,255,255,0.7);letter-spacing:0.5px;text-transform:none;font-weight:500;transition:var(--transition);width:100%}
 .dropdown-menu a:hover{background:rgba(245,166,35,0.08);color:var(--gold);padding-left:26px}
 .dropdown-menu a .d-icon{font-size:16px;width:24px;text-align:center}
 .dropdown-divider{height:1px;background:rgba(255,255,255,0.06);margin:4px 0}
-
 .nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:8px 18px!important;border-radius:var(--radius);font-weight:700!important}
 .nav-cta:hover{background:var(--gold-dark)!important}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
@@ -81,10 +68,10 @@ section{padding:100px 4%}
 .section-title .gold{color:var(--gold)}
 .section-desc{font-size:15px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.8;max-width:540px}
 
-/* ── PÁGINAS INTERNAS (ocultas por defecto) ── */
+/* ── PÁGINAS INTERNAS ── */
 .page-section{display:none;min-height:100vh;padding:110px 4% 80px;animation:fadeInUp 0.5s ease}
 .page-section.active{display:block}
-.page-back{display:inline-flex;align-items:center;gap:8px;color:var(--gray);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;margin-bottom:3rem;background:none;border:none;transition:var(--transition)}
+.page-back{display:inline-flex;align-items:center;gap:8px;color:var(--gray);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;margin-bottom:2rem;background:none;border:none;transition:var(--transition)}
 .page-back:hover{color:var(--gold)}
 
 /* ── SERVICIOS ── */
@@ -98,20 +85,49 @@ section{padding:100px 4%}
 .servicio-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;margin-bottom:.8rem}
 .servicio-desc{font-size:13px;font-weight:300;color:var(--gray);line-height:1.7}
 
-/* ── ALQUILER ── */
-.alquiler-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:3rem}
-.equipo-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;transition:var(--transition)}
-.equipo-card:hover{transform:translateY(-6px);border-color:rgba(245,166,35,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.4)}
-.equipo-img{height:180px;background:var(--dark3);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;overflow:hidden}
-.equipo-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(10,10,10,0.8))}
-.equipo-body{padding:20px 24px 24px}
-.equipo-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:6px}
-.equipo-desc{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:16px}
-.equipo-price{display:flex;align-items:baseline;gap:4px;margin-bottom:16px}
-.equipo-price .amount{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);letter-spacing:1px}
-.equipo-price .period{font-size:11px;color:var(--gray);font-weight:500}
-.btn-alquiler{display:block;width:100%;padding:10px;background:transparent;border:1px solid rgba(245,166,35,0.4);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:var(--radius);cursor:pointer;transition:var(--transition);text-align:center;text-decoration:none}
-.btn-alquiler:hover{background:var(--gold);color:var(--black)}
+/* ── ALQUILER: CATEGORÍAS ── */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:3rem}
+.cat-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;cursor:pointer;transition:var(--transition);position:relative}
+.cat-card:hover{transform:translateY(-6px);border-color:rgba(245,166,35,0.4);box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.cat-card:hover .cat-img-wrap{background:var(--dark3)}
+.cat-img-wrap{height:160px;background:var(--dark3);display:flex;align-items:center;justify-content:center;font-size:70px;transition:var(--transition);position:relative;overflow:hidden}
+.cat-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(10,10,10,0.7))}
+.cat-body{padding:18px 20px 22px}
+.cat-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:6px;color:var(--white)}
+.cat-desc{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:14px}
+.cat-count{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);color:var(--gold);font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:0.5px}
+.cat-arrow{position:absolute;top:16px;right:16px;background:rgba(245,166,35,0.15);color:var(--gold);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;transition:var(--transition)}
+.cat-card:hover .cat-arrow{background:var(--gold);color:var(--black)}
+
+/* ── ALQUILER: DETALLE EQUIPO ── */
+.equipo-detail-header{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;margin-bottom:4rem}
+.equipo-detail-img{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:120px;position:relative;overflow:hidden}
+.equipo-detail-img::after{content:'📸 Foto próximamente';position:absolute;bottom:0;left:0;right:0;background:rgba(10,10,10,0.8);color:var(--gray);font-size:11px;font-family:'Montserrat',sans-serif;padding:10px;text-align:center}
+.equipo-detail-info{padding-top:1rem}
+.equipo-detail-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,52px);letter-spacing:1px;margin-bottom:1rem;line-height:1}
+.equipo-detail-desc{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:1.5rem}
+.equipo-specs{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:20px;margin-bottom:1.5rem}
+.equipo-specs h4{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--gold);margin-bottom:12px}
+.spec-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px}
+.spec-row:last-child{border-bottom:none}
+.spec-row .slabel{color:var(--gray)}
+.spec-row .sval{font-weight:600;color:var(--white)}
+.equipo-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Subtipos */
+.subtipos-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:1.5rem;color:var(--white)}
+.subtipos-title span{color:var(--gold)}
+.subtipos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:3rem}
+.subtipo-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;transition:var(--transition)}
+.subtipo-card:hover{border-color:rgba(245,166,35,0.3);transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,0.4)}
+.subtipo-img{height:160px;background:var(--dark3);display:flex;align-items:center;justify-content:center;font-size:56px;position:relative}
+.subtipo-img .placeholder-txt{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);font-size:9px;color:var(--gray);text-align:center;padding:6px;font-family:'Montserrat',sans-serif}
+.subtipo-body{padding:16px 20px 20px}
+.subtipo-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:6px}
+.subtipo-desc{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:14px}
+.subtipo-tag{display:inline-block;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:12px;letter-spacing:0.5px}
+.btn-wa-small{display:block;width:100%;padding:10px;background:transparent;border:1px solid rgba(245,166,35,0.4);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:var(--radius);cursor:pointer;transition:var(--transition);text-align:center;text-decoration:none}
+.btn-wa-small:hover{background:var(--gold);color:var(--black)}
 
 /* ── PROYECTOS ── */
 .proyectos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:3rem}
@@ -192,11 +208,12 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* ── MOBILE ── */
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,0.99);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,0.99);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;overflow-y:auto;padding:80px 20px}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:3px;color:var(--white);text-decoration:none;transition:var(--transition)}
+.mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:3px;color:var(--white);text-decoration:none;transition:var(--transition);cursor:pointer}
 .mobile-menu a:hover{color:var(--gold)}
 .mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer}
+.mobile-sub{font-size:14px!important;letter-spacing:1px!important;color:var(--gray)!important;font-family:'Montserrat',sans-serif!important;font-weight:600!important}
 
 @media(max-width:1024px){
   .proyectos-grid{grid-template-columns:1fr 1fr}
@@ -204,6 +221,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
   .galeria-grid{grid-template-columns:repeat(3,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .cotizacion-wrap,.contacto-grid{grid-template-columns:1fr}
+  .equipo-detail-header{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .nav-links{display:none}
@@ -216,6 +234,14 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
   .form-row{grid-template-columns:1fr}
   section{padding:70px 5%}
   .page-section{padding:90px 5% 60px}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .subtipos-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .cat-grid{grid-template-columns:1fr}
+  .galeria-grid{grid-template-columns:1fr 1fr}
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-outline{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -223,70 +249,69 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
 
 <!-- ══ NAVBAR ══ -->
 <nav id="navbar">
-  <a href="#" onclick="irInicio()" class="nav-logo">
+  <div class="nav-logo" onclick="irInicio()">
     SOJI<span>FAM</span>
     <div><small>REMODELACIONES</small></div>
-  </a>
+  </div>
   <ul class="nav-links">
-    <li><a href="#" onclick="irInicio()">Inicio</a></li>
-
-    <!-- Dropdown: Nosotros -->
+    <li><a onclick="irInicio()">Inicio</a></li>
     <li class="has-drop">
-      <a href="#">Nosotros <span class="arrow">▾</span></a>
+      <a>Nosotros <span class="arrow">▾</span></a>
       <div class="dropdown-menu">
-        <a href="#" onclick="mostrarPagina('proyectos')"><span class="d-icon">🏗️</span> Proyectos realizados</a>
-        <a href="#" onclick="mostrarPagina('galeria')"><span class="d-icon">📸</span> Galería de trabajos</a>
+        <a onclick="mostrarPagina('proyectos')"><span class="d-icon">🏗️</span> Proyectos realizados</a>
+        <a onclick="mostrarPagina('galeria')"><span class="d-icon">📸</span> Galería de trabajos</a>
       </div>
     </li>
-
-    <!-- Dropdown: Servicios -->
     <li class="has-drop">
-      <a href="#">Servicios <span class="arrow">▾</span></a>
+      <a>Servicios <span class="arrow">▾</span></a>
       <div class="dropdown-menu">
-        <a href="#" onclick="mostrarPagina('servicios','construccion')"><span class="d-icon">🏗️</span> Construcción</a>
-        <a href="#" onclick="mostrarPagina('servicios','remodelacion')"><span class="d-icon">🔨</span> Remodelaciones</a>
-        <a href="#" onclick="mostrarPagina('servicios','obras')"><span class="d-icon">🧱</span> Obras Grises</a>
+        <a onclick="mostrarPagina('servicios','construccion')"><span class="d-icon">🏗️</span> Construcción</a>
+        <a onclick="mostrarPagina('servicios','remodelacion')"><span class="d-icon">🔨</span> Remodelaciones</a>
+        <a onclick="mostrarPagina('servicios','obras')"><span class="d-icon">🧱</span> Obras Grises</a>
         <div class="dropdown-divider"></div>
-        <a href="#" onclick="mostrarPagina('servicios','electrico')"><span class="d-icon">⚡</span> Electricidad</a>
-        <a href="#" onclick="mostrarPagina('servicios','plomeria')"><span class="d-icon">🔧</span> Plomería</a>
-        <a href="#" onclick="mostrarPagina('servicios','soldadura')"><span class="d-icon">🔩</span> Soldadura</a>
+        <a onclick="mostrarPagina('servicios','electrico')"><span class="d-icon">⚡</span> Electricidad</a>
+        <a onclick="mostrarPagina('servicios','plomeria')"><span class="d-icon">🔧</span> Plomería</a>
+        <a onclick="mostrarPagina('servicios','soldadura')"><span class="d-icon">🔩</span> Soldadura</a>
         <div class="dropdown-divider"></div>
-        <a href="#" onclick="mostrarPagina('servicios','tapicheles')"><span class="d-icon">🪟</span> Tapicheles / Cielos</a>
-        <a href="#" onclick="mostrarPagina('servicios','ceramica')"><span class="d-icon">🪣</span> Cerámica / Pisos</a>
+        <a onclick="mostrarPagina('servicios','tapicheles')"><span class="d-icon">🪟</span> Tapicheles / Cielos</a>
+        <a onclick="mostrarPagina('servicios','ceramica')"><span class="d-icon">🪣</span> Cerámica / Pisos</a>
       </div>
     </li>
-
-    <!-- Alquiler -->
-    <li><a href="#" onclick="mostrarPagina('alquiler')">Alquiler</a></li>
-
-    <li><a href="#cotizaciones" onclick="irInicio()">Cotizaciones</a></li>
-    <li><a href="#contacto" onclick="irInicio()">Contacto</a></li>
+    <li class="has-drop">
+      <a>Alquiler <span class="arrow">▾</span></a>
+      <div class="dropdown-menu">
+        <a onclick="mostrarEquipo('batidoras')"><span class="d-icon">🌀</span> Batidoras / Mezcladoras</a>
+        <a onclick="mostrarEquipo('planchas')"><span class="d-icon">🔲</span> Planchas Vibratorias</a>
+        <a onclick="mostrarEquipo('brincon')"><span class="d-icon">⚙️</span> Brincón Compactador</a>
+        <a onclick="mostrarEquipo('rotomartillo')"><span class="d-icon">🔨</span> Rotomartillos</a>
+        <a onclick="mostrarEquipo('andamios')"><span class="d-icon">🏗️</span> Andamios</a>
+        <a onclick="mostrarEquipo('plantas')"><span class="d-icon">⚡</span> Plantas Eléctricas</a>
+        <div class="dropdown-divider"></div>
+        <a onclick="mostrarPagina('alquiler')"><span class="d-icon">📋</span> Ver todos los equipos</a>
+      </div>
+    </li>
+    <li><a onclick="irInicio();setTimeout(()=>document.getElementById('cotizaciones').scrollIntoView({behavior:'smooth'}),100)">Cotizaciones</a></li>
+    <li><a onclick="irInicio();setTimeout(()=>document.getElementById('contacto').scrollIntoView({behavior:'smooth'}),100)">Contacto</a></li>
     <li><a href="https://wa.me/50688139534" target="_blank" class="nav-cta">WhatsApp</a></li>
   </ul>
-  <div class="nav-toggle" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- ══ MOBILE MENU ══ -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
-  <a href="#" onclick="irInicio();toggleMenu()">Inicio</a>
-  <a href="#" onclick="mostrarPagina('servicios');toggleMenu()">Servicios</a>
-  <a href="#" onclick="mostrarPagina('alquiler');toggleMenu()">Alquiler</a>
-  <a href="#" onclick="mostrarPagina('proyectos');toggleMenu()">Proyectos</a>
-  <a href="#" onclick="mostrarPagina('galeria');toggleMenu()">Galería</a>
-  <a href="#cotizaciones" onclick="irInicio();toggleMenu()">Cotizaciones</a>
-  <a href="#contacto" onclick="irInicio();toggleMenu()">Contacto</a>
+  <a onclick="irInicio();toggleMenu()">Inicio</a>
+  <a onclick="mostrarPagina('servicios');toggleMenu()">Servicios</a>
+  <a onclick="mostrarPagina('alquiler');toggleMenu()">Alquiler</a>
+  <a onclick="mostrarPagina('proyectos');toggleMenu()">Proyectos</a>
+  <a onclick="mostrarPagina('galeria');toggleMenu()">Galería</a>
+  <a onclick="irInicio();setTimeout(()=>document.getElementById('cotizaciones').scrollIntoView({behavior:'smooth'}),100);toggleMenu()">Cotizaciones</a>
+  <a onclick="irInicio();setTimeout(()=>document.getElementById('contacto').scrollIntoView({behavior:'smooth'}),100);toggleMenu()">Contacto</a>
   <a href="https://wa.me/50688139534" target="_blank" style="color:var(--gold)">💬 WhatsApp</a>
 </div>
 
-<!-- ══════════════════════════════════════════════ -->
-<!--  PÁGINA PRINCIPAL (Inicio)                    -->
-<!-- ══════════════════════════════════════════════ -->
+<!-- ══════════════════ INICIO ══════════════════ -->
 <div id="pagina-inicio">
-
-  <!-- HERO -->
   <section id="inicio">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
@@ -294,8 +319,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
       <h1 class="hero-title">SOJI<span class="gold">FAM</span><br><span class="outline">REMODELACIONES</span></h1>
       <p class="hero-slogan">Construimos tu visión, transformamos tu espacio.<br>Más de 10 años de experiencia en construcción y remodelación.</p>
       <div class="hero-btns">
-        <a href="#cotizaciones" class="btn-primary">📋 Solicitar cotización</a>
-        <a href="#" onclick="mostrarPagina('servicios')" class="btn-outline">Ver servicios →</a>
+        <a onclick="irInicio();setTimeout(()=>document.getElementById('cotizaciones').scrollIntoView({behavior:'smooth'}),100)" class="btn-primary">📋 Solicitar cotización</a>
+        <a onclick="mostrarPagina('servicios')" class="btn-outline">Ver servicios →</a>
       </div>
       <div class="hero-service-badge">Servicio en todo Costa Rica</div>
     </div>
@@ -335,16 +360,10 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
             <label>Tipo de servicio</label>
             <select id="f-servicio" required>
               <option value="">Seleccione un servicio</option>
-              <option>Construcción nueva</option>
-              <option>Remodelación</option>
-              <option>Obras grises</option>
-              <option>Electricidad</option>
-              <option>Plomería</option>
-              <option>Soldadura</option>
-              <option>Tapicheles / Cielos</option>
-              <option>Cerámica / Pisos</option>
-              <option>Alquiler de equipos</option>
-              <option>Otro</option>
+              <option>Construcción nueva</option><option>Remodelación</option><option>Obras grises</option>
+              <option>Electricidad</option><option>Plomería</option><option>Soldadura</option>
+              <option>Tapicheles / Cielos</option><option>Cerámica / Pisos</option>
+              <option>Alquiler de equipos</option><option>Otro</option>
             </select>
           </div>
           <div class="form-group"><label>Descripción del proyecto</label><textarea id="f-desc" placeholder="Describa brevemente su proyecto..." required></textarea></div>
@@ -378,50 +397,101 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
       </div>
     </div>
   </section>
+</div>
 
-</div><!-- fin pagina-inicio -->
-
-<!-- ══════════════════════════════════════════════ -->
-<!--  PÁGINAS INTERNAS                             -->
-<!-- ══════════════════════════════════════════════ -->
-
-<!-- SERVICIOS -->
+<!-- ══════════════════ SERVICIOS ══════════════════ -->
 <div id="pagina-servicios" class="page-section">
   <button class="page-back" onclick="irInicio()">← Volver al inicio</button>
   <div class="section-tag">Lo que hacemos</div>
   <h2 class="section-title">NUESTROS <span class="gold">SERVICIOS</span></h2>
-  <p class="section-desc">Ofrecemos soluciones integrales en construcción y remodelación con los más altos estándares de calidad.</p>
+  <p class="section-desc">Soluciones integrales en construcción y remodelación con los más altos estándares de calidad.</p>
   <div class="servicios-grid">
-    <div class="servicio-card" id="srv-construccion"><span class="servicio-num">01</span><span class="servicio-icon">🏗️</span><div class="servicio-title">Construcción</div><p class="servicio-desc">Construcción de obras nuevas desde cimientos hasta acabados finales. Trabajamos con los mejores materiales del mercado.</p></div>
-    <div class="servicio-card" id="srv-remodelacion"><span class="servicio-num">02</span><span class="servicio-icon">🔨</span><div class="servicio-title">Remodelaciones</div><p class="servicio-desc">Transformamos y modernizamos espacios existentes. Baños, cocinas, salas, fachadas y mucho más.</p></div>
-    <div class="servicio-card" id="srv-obras"><span class="servicio-num">03</span><span class="servicio-icon">🧱</span><div class="servicio-title">Obras Grises</div><p class="servicio-desc">Estructuras de concreto, columnas, vigas, paredes y todo tipo de trabajo en obra gris de alta calidad.</p></div>
+    <div class="servicio-card" id="srv-construccion"><span class="servicio-num">01</span><span class="servicio-icon">🏗️</span><div class="servicio-title">Construcción</div><p class="servicio-desc">Construcción de obras nuevas desde cimientos hasta acabados finales con los mejores materiales.</p></div>
+    <div class="servicio-card" id="srv-remodelacion"><span class="servicio-num">02</span><span class="servicio-icon">🔨</span><div class="servicio-title">Remodelaciones</div><p class="servicio-desc">Transformamos y modernizamos espacios. Baños, cocinas, salas, fachadas y mucho más.</p></div>
+    <div class="servicio-card" id="srv-obras"><span class="servicio-num">03</span><span class="servicio-icon">🧱</span><div class="servicio-title">Obras Grises</div><p class="servicio-desc">Estructuras de concreto, columnas, vigas, paredes y trabajo en obra gris de alta calidad.</p></div>
     <div class="servicio-card" id="srv-electrico"><span class="servicio-num">04</span><span class="servicio-icon">⚡</span><div class="servicio-title">Electricidad</div><p class="servicio-desc">Instalaciones eléctricas residenciales y comerciales. Paneles, cableado, luminarias y más.</p></div>
     <div class="servicio-card" id="srv-plomeria"><span class="servicio-num">05</span><span class="servicio-icon">🔧</span><div class="servicio-title">Plomería</div><p class="servicio-desc">Instalación y reparación de tuberías, sistemas de agua potable y aguas residuales.</p></div>
-    <div class="servicio-card" id="srv-soldadura"><span class="servicio-num">06</span><span class="servicio-icon">🔩</span><div class="servicio-title">Soldadura</div><p class="servicio-desc">Estructuras metálicas, portones, verjas, techos y todo tipo de trabajo en hierro y acero.</p></div>
+    <div class="servicio-card" id="srv-soldadura"><span class="servicio-num">06</span><span class="servicio-icon">🔩</span><div class="servicio-title">Soldadura</div><p class="servicio-desc">Estructuras metálicas, portones, verjas, techos y trabajo en hierro y acero.</p></div>
     <div class="servicio-card" id="srv-tapicheles"><span class="servicio-num">07</span><span class="servicio-icon">🪟</span><div class="servicio-title">Tapicheles y Cielos</div><p class="servicio-desc">Instalación de tapicheles, cielos rasos PVC y acabados decorativos para interiores y exteriores.</p></div>
-    <div class="servicio-card" id="srv-ceramica"><span class="servicio-num">08</span><span class="servicio-icon">🪣</span><div class="servicio-title">Cerámica y Pisos</div><p class="servicio-desc">Colocación de cerámica, porcelanato, nivelaciones y todo tipo de acabados en pisos.</p></div>
+    <div class="servicio-card" id="srv-ceramica"><span class="servicio-num">08</span><span class="servicio-icon">🪣</span><div class="servicio-title">Cerámica y Pisos</div><p class="servicio-desc">Colocación de cerámica, porcelanato, nivelaciones y acabados en pisos.</p></div>
   </div>
   <div style="text-align:center;margin-top:3rem">
     <a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20quiero%20cotizar%20un%20servicio" target="_blank" class="btn-primary">📋 Solicitar cotización</a>
   </div>
 </div>
 
-<!-- ALQUILER -->
+<!-- ══════════════════ ALQUILER: CATÁLOGO ══════════════════ -->
 <div id="pagina-alquiler" class="page-section">
   <button class="page-back" onclick="irInicio()">← Volver al inicio</button>
   <div class="section-tag">Disponible ahora</div>
   <h2 class="section-title">ALQUILER DE <span class="gold">EQUIPOS</span></h2>
-  <p class="section-desc">Equipos de construcción disponibles para alquiler. Ideal para proyectos propios o contratistas.</p>
-  <div class="alquiler-grid">
-    <div class="equipo-card"><div class="equipo-img">🏗️</div><div class="equipo-body"><div class="equipo-name">Andamios</div><p class="equipo-desc">Andamios tubulares de acero, seguros y resistentes para trabajos en altura.</p><div class="equipo-price"><span class="amount">Consultar</span><span class="period">precio/día</span></div><a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20quiero%20alquilar%20andamios" target="_blank" class="btn-alquiler">Solicitar alquiler</a></div></div>
-    <div class="equipo-card"><div class="equipo-img">🔨</div><div class="equipo-body"><div class="equipo-name">Compactadora</div><p class="equipo-desc">Compactadora de suelo para preparación de bases y terraplenamientos.</p><div class="equipo-price"><span class="amount">Consultar</span><span class="period">precio/día</span></div><a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20quiero%20alquilar%20compactadora" target="_blank" class="btn-alquiler">Solicitar alquiler</a></div></div>
-    <div class="equipo-card"><div class="equipo-img">⚙️</div><div class="equipo-body"><div class="equipo-name">Mezcladora</div><p class="equipo-desc">Mezcladora de concreto eléctrica de alta capacidad para obras en construcción.</p><div class="equipo-price"><span class="amount">Consultar</span><span class="period">precio/día</span></div><a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20quiero%20alquilar%20mezcladora" target="_blank" class="btn-alquiler">Solicitar alquiler</a></div></div>
-    <div class="equipo-card"><div class="equipo-img">💡</div><div class="equipo-body"><div class="equipo-name">Generador</div><p class="equipo-desc">Generadores eléctricos para zonas sin suministro o respaldo de energía en obra.</p><div class="equipo-price"><span class="amount">Consultar</span><span class="period">precio/día</span></div><a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20quiero%20alquilar%20generador" target="_blank" class="btn-alquiler">Solicitar alquiler</a></div></div>
+  <p class="section-desc">Equipos de construcción disponibles para alquiler por día, semana o mes. Seleccione una categoría para ver los equipos disponibles.</p>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="mostrarEquipo('batidoras')">
+      <div class="cat-arrow">→</div>
+      <div class="cat-img-wrap">🌀</div>
+      <div class="cat-body">
+        <div class="cat-name">Batidoras / Mezcladoras</div>
+        <p class="cat-desc">Mezcladoras de concreto eléctricas y a gasolina. Disponibles en varios tamaños.</p>
+        <span class="cat-count">3 modelos disponibles</span>
+      </div>
+    </div>
+    <div class="cat-card" onclick="mostrarEquipo('planchas')">
+      <div class="cat-arrow">→</div>
+      <div class="cat-img-wrap">🔲</div>
+      <div class="cat-body">
+        <div class="cat-name">Planchas Vibratorias</div>
+        <p class="cat-desc">Compactación de suelos, adoquín y asfalto. Motor a gasolina de alta eficiencia.</p>
+        <span class="cat-count">1 modelo disponible</span>
+      </div>
+    </div>
+    <div class="cat-card" onclick="mostrarEquipo('brincon')">
+      <div class="cat-arrow">→</div>
+      <div class="cat-img-wrap">⚙️</div>
+      <div class="cat-body">
+        <div class="cat-name">Brincón Compactador</div>
+        <p class="cat-desc">Compactación en zanjas, esquinas y espacios reducidos donde la plancha no llega.</p>
+        <span class="cat-count">1 modelo disponible</span>
+      </div>
+    </div>
+    <div class="cat-card" onclick="mostrarEquipo('rotomartillo')">
+      <div class="cat-arrow">→</div>
+      <div class="cat-img-wrap">🔨</div>
+      <div class="cat-body">
+        <div class="cat-name">Rotomartillos</div>
+        <p class="cat-desc">Demolición y perforación de concreto. Eléctricos de diferentes potencias.</p>
+        <span class="cat-count">2 modelos disponibles</span>
+      </div>
+    </div>
+    <div class="cat-card" onclick="mostrarEquipo('andamios')">
+      <div class="cat-arrow">→</div>
+      <div class="cat-img-wrap">🏗️</div>
+      <div class="cat-body">
+        <div class="cat-name">Andamios</div>
+        <p class="cat-desc">Andamios tubulares de acero para trabajos en altura. Seguros y resistentes.</p>
+        <span class="cat-count">Alquiler por módulo</span>
+      </div>
+    </div>
+    <div class="cat-card" onclick="mostrarEquipo('plantas')">
+      <div class="cat-arrow">→</div>
+      <div class="cat-img-wrap">⚡</div>
+      <div class="cat-body">
+        <div class="cat-name">Plantas Eléctricas</div>
+        <p class="cat-desc">Generadores de 3kW hasta 20kW para obras sin suministro eléctrico.</p>
+        <span class="cat-count">4 capacidades</span>
+      </div>
+    </div>
   </div>
-  <p style="text-align:center;margin-top:2rem;font-size:13px;color:var(--gray)">¿Necesita otro equipo? <a href="https://wa.me/50688139534" target="_blank" style="color:var(--gold)">Consultar por WhatsApp →</a></p>
+  <p style="text-align:center;margin-top:2rem;font-size:13px;color:var(--gray)">¿No encuentra lo que busca? <a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20busco%20un%20equipo%20específico" target="_blank" style="color:var(--gold)">Consúltenos por WhatsApp →</a></p>
 </div>
 
-<!-- PROYECTOS -->
+<!-- ══════════════════ EQUIPO DETALLE ══════════════════ -->
+<div id="pagina-equipo" class="page-section">
+  <button class="page-back" onclick="mostrarPagina('alquiler')">← Volver a equipos</button>
+  <div id="equipo-contenido"></div>
+</div>
+
+<!-- ══════════════════ PROYECTOS ══════════════════ -->
 <div id="pagina-proyectos" class="page-section">
   <button class="page-back" onclick="irInicio()">← Volver al inicio</button>
   <div class="section-tag">Nuestro trabajo</div>
@@ -436,12 +506,12 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
   </div>
 </div>
 
-<!-- GALERÍA -->
+<!-- ══════════════════ GALERÍA ══════════════════ -->
 <div id="pagina-galeria" class="page-section">
   <button class="page-back" onclick="irInicio()">← Volver al inicio</button>
   <div class="section-tag">Fotos reales</div>
   <h2 class="section-title">GALERÍA DE <span class="gold">TRABAJOS</span></h2>
-  <p class="section-desc">Imágenes de nuestros proyectos. Próximamente se agregarán fotos reales de nuestros trabajos.</p>
+  <p class="section-desc">Próximamente se agregarán fotos reales de nuestros proyectos completados.</p>
   <div class="galeria-grid">
     <div class="galeria-item wide" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a)">🏗️<div class="gal-label">Próximamente — Foto real</div></div>
     <div class="galeria-item" style="background:linear-gradient(135deg,#2a1a1a,#1a1a1a)">🔨<div class="gal-label">Próximamente</div></div>
@@ -450,7 +520,6 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
     <div class="galeria-item" style="background:linear-gradient(135deg,#2a2a1a,#1a1a1a)">🔩<div class="gal-label">Próximamente</div></div>
     <div class="galeria-item wide" style="background:linear-gradient(135deg,#1a2a2a,#1a1a1a)">🏠<div class="gal-label">Próximamente — Foto real</div></div>
   </div>
-  <p style="text-align:center;margin-top:2rem;font-size:13px;color:var(--gray)">📸 Las fotos reales se agregarán próximamente. <a href="https://wa.me/50688139534" target="_blank" style="color:var(--gold)">¿Tiene un proyecto? Contáctenos →</a></p>
 </div>
 
 <!-- ══ FOOTER ══ -->
@@ -476,13 +545,14 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Empresa</h4>
+      <h4>Alquiler</h4>
       <ul>
-        <li><a onclick="mostrarPagina('proyectos')">Proyectos</a></li>
-        <li><a onclick="mostrarPagina('galeria')">Galería</a></li>
-        <li><a onclick="mostrarPagina('alquiler')">Alquiler equipos</a></li>
-        <li><a onclick="irInicio();setTimeout(()=>document.getElementById('cotizaciones').scrollIntoView({behavior:'smooth'}),100)">Cotizaciones</a></li>
-        <li><a onclick="irInicio();setTimeout(()=>document.getElementById('contacto').scrollIntoView({behavior:'smooth'}),100)">Contacto</a></li>
+        <li><a onclick="mostrarEquipo('batidoras')">Batidoras</a></li>
+        <li><a onclick="mostrarEquipo('planchas')">Planchas Vibratorias</a></li>
+        <li><a onclick="mostrarEquipo('brincon')">Brincón Compactador</a></li>
+        <li><a onclick="mostrarEquipo('rotomartillo')">Rotomartillos</a></li>
+        <li><a onclick="mostrarEquipo('andamios')">Andamios</a></li>
+        <li><a onclick="mostrarEquipo('plantas')">Plantas Eléctricas</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -500,81 +570,202 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
   </div>
 </footer>
 
-<!-- ══ WHATSAPP FLOAT ══ -->
 <div class="whatsapp-float">
   <div class="whatsapp-label">¡Escríbanos ahora!</div>
   <a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20necesito%20información" target="_blank" class="whatsapp-btn">💬</a>
 </div>
 
 <script>
-// ── NAVBAR SCROLL ────────────────────────────────────────────────────────────
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
-});
+// ── DATA DE EQUIPOS ───────────────────────────────────────────────────────────
+const equipos = {
+  batidoras: {
+    icon: '🌀',
+    nombre: 'Batidoras / Mezcladoras de Concreto',
+    desc: 'Mezcladoras de concreto disponibles en versiones eléctricas y a gasolina, para proyectos de construcción de cualquier tamaño. Ideales para preparar mezcla de cemento, arena y lastre en obra.',
+    specs: [
+      {l:'Uso ideal', v:'Concreto, mortero, repello'},
+      {l:'Disponibilidad', v:'Por día, semana o mes'},
+      {l:'Entrega', v:'Todo Costa Rica'},
+    ],
+    subtipos: [
+      {icon:'🌀', tag:'Eléctrica 110V', nombre:'Batidora 1.5 Sacos — 110V', desc:'Mezcladora eléctrica de 1.5 sacos de capacidad. Funciona con corriente estándar 110V. Ideal para proyectos residenciales y trabajos pequeños a medianos.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20batidora%20de%201.5%20sacos%20110V'},
+      {icon:'🌀', tag:'Eléctrica 220V', nombre:'Batidora 2 Sacos — 220V', desc:'Mezcladora eléctrica de 2 sacos de capacidad. Mayor potencia con corriente trifásica 220V. Perfecta para obras comerciales e industriales.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20batidora%20de%202%20sacos%20220V'},
+      {icon:'⛽', tag:'A gasolina', nombre:'Batidora 2 Sacos — Gasolina', desc:'Mezcladora de 2 sacos con motor a gasolina. Funciona en cualquier sitio sin necesidad de electricidad. Ideal para obras en zonas sin suministro eléctrico.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20batidora%20de%202%20sacos%20a%20gasolina'},
+    ]
+  },
+  planchas: {
+    icon: '🔲',
+    nombre: 'Planchas Vibratorias Compactadoras',
+    desc: 'La plancha vibratoria es el equipo ideal para compactación de suelos granulares, adoquín, bacheo de asfalto y bases de aceras o carreteras. Motor a gasolina 4 tiempos de alta eficiencia.',
+    specs: [
+      {l:'Uso ideal', v:'Suelos, adoquín, asfalto'},
+      {l:'Motor', v:'Gasolina 4 tiempos'},
+      {l:'Fuerza centrífuga', v:'Alta compactación'},
+      {l:'Disponibilidad', v:'Por día, semana o mes'},
+    ],
+    subtipos: [
+      {icon:'🔲', tag:'A gasolina', nombre:'Plancha Vibratoria Compactadora', desc:'Plancha compactadora con motor a gasolina de alta eficiencia. Diseñada para compactación precisa de suelos granulares, colocación de adoquines, bacheo de asfalto y preparación de bases para aceras y carreteras.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20plancha%20vibratoria'},
+    ]
+  },
+  brincon: {
+    icon: '⚙️',
+    nombre: 'Brincón Compactador',
+    desc: 'El brincón compactador es indispensable para compactar en espacios reducidos donde la plancha vibratoria no puede llegar: zanjas, esquinas, bordes de fundaciones y áreas estrechas.',
+    specs: [
+      {l:'Uso ideal', v:'Zanjas, esquinas, espacios reducidos'},
+      {l:'Motor', v:'Gasolina'},
+      {l:'Complemento de', v:'Plancha vibratoria'},
+      {l:'Disponibilidad', v:'Por día, semana o mes'},
+    ],
+    subtipos: [
+      {icon:'⚙️', tag:'A gasolina', nombre:'Brincón Compactador', desc:'Compactador de impacto (tipo saltarín) a gasolina. Perfecto para compactar zanjas de tuberías, área de fundaciones y cualquier espacio estrecho donde no entra la plancha vibratoria. Garantiza una compactación uniforme y segura.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20un%20brincon%20compactador'},
+    ]
+  },
+  rotomartillo: {
+    icon: '🔨',
+    nombre: 'Rotomartillos',
+    desc: 'Equipos de demolición y perforación de concreto para todo tipo de obra. Disponibles en diferentes potencias según el trabajo a realizar. Ideales para demolición de pisos, paredes, perforación de columnas y más.',
+    specs: [
+      {l:'Uso ideal', v:'Demolición y perforación de concreto'},
+      {l:'Tipo', v:'Eléctrico'},
+      {l:'Disponibilidad', v:'Por día, semana o mes'},
+    ],
+    subtipos: [
+      {icon:'🔨', tag:'Liviano', nombre:'Rotomartillo Liviano', desc:'Rotomartillo eléctrico de menor peso y tamaño. Ideal para perforaciones en paredes, instalaciones eléctricas y plomería, y demoliciones ligeras. Fácil de maniobrar en espacios pequeños.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20un%20rotomartillo%20liviano'},
+      {icon:'🔨', tag:'Pesado', nombre:'Rotomartillo / Demoledor Pesado', desc:'Demoledor eléctrico de alta potencia para trabajos de demolición intensiva. Rompe concreto, mampostería y materiales duros. Recomendado para demolición de pisos, paredes de concreto y fundaciones.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20un%20demoledor%20pesado'},
+    ]
+  },
+  andamios: {
+    icon: '🏗️',
+    nombre: 'Andamios Tubulares',
+    desc: 'Andamios tubulares de acero galvanizado para trabajos en altura. Seguros, resistentes y fáciles de armar. Disponibles para alquiler por módulo según la altura y área que necesite cubrir.',
+    specs: [
+      {l:'Material', v:'Acero galvanizado'},
+      {l:'Uso ideal', v:'Fachadas, cielos, pintura, repello'},
+      {l:'Alquiler', v:'Por módulo / por set'},
+      {l:'Disponibilidad', v:'Todo Costa Rica'},
+    ],
+    subtipos: [
+      {icon:'🏗️', tag:'Por módulo', nombre:'Andamio Tubular — Módulo estándar', desc:'Módulo de andamio tubular de acero galvanizado. Se arman según la altura requerida apilando módulos. Incluye tablones de trabajo y argollas de seguridad. Ideal para fachadas, repello, pintura, instalación de cielos y trabajos de techo.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20andamios,%20necesito%20informaci%C3%B3n%20sobre%20cant%C3%ADdad%20y%20altura'},
+    ]
+  },
+  plantas: {
+    icon: '⚡',
+    nombre: 'Plantas Eléctricas / Generadores',
+    desc: 'Generadores eléctricos a gasolina disponibles en 4 capacidades para cubrir cualquier necesidad de su obra. Desde pequeños proyectos residenciales hasta obras comerciales de gran escala.',
+    specs: [
+      {l:'Combustible', v:'Gasolina'},
+      {l:'Uso ideal', v:'Obras sin suministro eléctrico'},
+      {l:'Capacidades', v:'3kW, 10kW, 15kW, 20kW'},
+      {l:'Disponibilidad', v:'Por día, semana o mes'},
+    ],
+    subtipos: [
+      {icon:'⚡', tag:'3 kW', nombre:'Planta Eléctrica 3 kW', desc:'Generador de 3 kW ideal para herramientas pequeñas, iluminación básica y trabajos menores en obra. Perfecto para proyectos residenciales con poca demanda eléctrica.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20planta%20el%C3%A9ctrica%20de%203kW'},
+      {icon:'⚡', tag:'10 kW', nombre:'Planta Eléctrica 10 kW', desc:'Generador de 10 kW para alimentar varias herramientas simultáneamente. Ideal para obras medianas con necesidades moderadas de energía.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20planta%20el%C3%A9ctrica%20de%2010kW'},
+      {icon:'⚡', tag:'15 kW', nombre:'Planta Eléctrica 15 kW', desc:'Generador de 15 kW de alta capacidad. Soporta equipos de mayor consumo como compresores, sierras industriales y múltiples herramientas eléctricas.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20planta%20el%C3%A9ctrica%20de%2015kW'},
+      {icon:'⚡', tag:'20 kW', nombre:'Planta Eléctrica 20 kW', desc:'Nuestro generador de mayor capacidad. 20 kW para obras comerciales o industriales con alta demanda energética. Soporte para múltiples circuitos simultáneos.', wa:'Hola%20SOJIFAM,%20quiero%20alquilar%20una%20planta%20el%C3%A9ctrica%20de%2020kW'},
+    ]
+  }
+};
 
-// ── MOBILE MENU ──────────────────────────────────────────────────────────────
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-
-// ── REVEAL ON SCROLL ─────────────────────────────────────────────────────────
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// ── NAVEGACIÓN ENTRE PÁGINAS ─────────────────────────────────────────────────
+// ── NAVEGACIÓN ────────────────────────────────────────────────────────────────
 function mostrarPagina(pagina, subSeccion){
-  // Ocultar todo
   document.getElementById('pagina-inicio').style.display='none';
   document.querySelectorAll('.page-section').forEach(p=>p.classList.remove('active'));
-  // Mostrar la página solicitada
   const el=document.getElementById('pagina-'+pagina);
   if(el){
     el.classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
-    // Si viene con subSección, hacer scroll a esa tarjeta
     if(subSeccion){
       setTimeout(()=>{
-        const target=document.getElementById('srv-'+subSeccion);
-        if(target){
-          target.scrollIntoView({behavior:'smooth',block:'center'});
-          target.style.outline='2px solid var(--gold)';
-          target.style.borderRadius='4px';
-          setTimeout(()=>target.style.outline='',2000);
-        }
+        const t=document.getElementById('srv-'+subSeccion);
+        if(t){t.scrollIntoView({behavior:'smooth',block:'center'});t.style.outline='2px solid var(--gold)';setTimeout(()=>t.style.outline='',2000)}
       },400);
     }
   }
   return false;
 }
 
+function mostrarEquipo(tipo){
+  const eq=equipos[tipo];
+  if(!eq) return;
+  document.getElementById('pagina-inicio').style.display='none';
+  document.querySelectorAll('.page-section').forEach(p=>p.classList.remove('active'));
+
+  const specsHTML=eq.specs.map(s=>`<div class="spec-row"><span class="slabel">${s.l}</span><span class="sval">${s.v}</span></div>`).join('');
+  const subtHTML=eq.subtipos.map(s=>`
+    <div class="subtipo-card">
+      <div class="subtipo-img">${s.icon}<div class="placeholder-txt">📸 Foto próximamente</div></div>
+      <div class="subtipo-body">
+        <span class="subtipo-tag">${s.tag}</span>
+        <div class="subtipo-name">${s.nombre}</div>
+        <p class="subtipo-desc">${s.desc}</p>
+        <a href="https://wa.me/50688139534?text=${s.wa}" target="_blank" class="btn-wa-small">💬 Consultar disponibilidad</a>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('equipo-contenido').innerHTML=`
+    <div class="section-tag">Alquiler de equipos</div>
+    <h2 class="section-title" style="margin-bottom:3rem">${eq.icon} <span class="gold">${eq.nombre}</span></h2>
+    <div class="equipo-detail-header">
+      <div class="equipo-detail-img">${eq.icon}</div>
+      <div class="equipo-detail-info">
+        <p class="equipo-detail-desc">${eq.desc}</p>
+        <div class="equipo-specs">
+          <h4>Información general</h4>
+          ${specsHTML}
+        </div>
+        <div class="equipo-btns">
+          <a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20quiero%20información%20sobre%20alquiler%20de%20${encodeURIComponent(eq.nombre)}" target="_blank" class="btn-primary">💬 Consultar por WhatsApp</a>
+          <button onclick="mostrarPagina('alquiler')" class="btn-outline">← Ver todos los equipos</button>
+        </div>
+      </div>
+    </div>
+    <div class="subtipos-title">Modelos disponibles — <span>${eq.subtipos.length} opción${eq.subtipos.length>1?'es':''}</span></div>
+    <div class="subtipos-grid">${subtHTML}</div>
+    <div style="background:var(--dark2);border:1px solid rgba(245,166,35,0.2);border-radius:8px;padding:24px;text-align:center;margin-top:1rem">
+      <p style="font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:16px">¿Necesita más información o tiene alguna consulta especial?</p>
+      <a href="https://wa.me/50688139534?text=Hola%20SOJIFAM,%20tengo%20una%20consulta%20sobre%20alquiler%20de%20${encodeURIComponent(eq.nombre)}" target="_blank" class="btn-primary">📞 Hablar con un asesor</a>
+    </div>
+  `;
+
+  document.getElementById('pagina-equipo').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
 function irInicio(){
   document.querySelectorAll('.page-section').forEach(p=>p.classList.remove('active'));
   document.getElementById('pagina-inicio').style.display='';
   window.scrollTo({top:0,behavior:'smooth'});
-  return false;
 }
 
-// ── FORMULARIO COTIZACIÓN → WHATSAPP ─────────────────────────────────────────
+// ── NAVBAR & MOBILE ───────────────────────────────────────────────────────────
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+// ── REVEAL ────────────────────────────────────────────────────────────────────
+const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── FORMULARIOS ───────────────────────────────────────────────────────────────
 function enviarCotizacion(e){
   e.preventDefault();
-  const nombre=document.getElementById('f-nombre').value;
-  const tel=document.getElementById('f-tel').value;
-  const email=document.getElementById('f-email').value;
-  const servicio=document.getElementById('f-servicio').value;
-  const desc=document.getElementById('f-desc').value;
-  const msg=`Hola SOJIFAM 👋, soy *${nombre}*.\n\n📋 *Solicitud de cotización*\n📞 Teléfono: ${tel}\n📧 Correo: ${email||'No indicado'}\n🔧 Servicio: ${servicio}\n\n📝 Descripción:\n${desc}`;
+  const n=document.getElementById('f-nombre').value;
+  const t=document.getElementById('f-tel').value;
+  const em=document.getElementById('f-email').value;
+  const s=document.getElementById('f-servicio').value;
+  const d=document.getElementById('f-desc').value;
+  const msg=`Hola SOJIFAM 👋, soy *${n}*.\n\n📋 *Solicitud de cotización*\n📞 Teléfono: ${t}\n📧 Correo: ${em||'No indicado'}\n🔧 Servicio: ${s}\n\n📝 Descripción:\n${d}`;
   window.open(`https://wa.me/50688139534?text=${encodeURIComponent(msg)}`,'_blank');
 }
-
-// ── FORMULARIO CONTACTO → WHATSAPP ───────────────────────────────────────────
 function enviarMensaje(e){
   e.preventDefault();
-  const nombre=document.getElementById('c-nombre').value;
-  const tel=document.getElementById('c-tel').value;
-  const msg=document.getElementById('c-msg').value;
-  const texto=`Hola SOJIFAM 👋, soy *${nombre}*.\n📞 Teléfono: ${tel}\n\n💬 ${msg}`;
-  window.open(`https://wa.me/50688139534?text=${encodeURIComponent(texto)}`,'_blank');
+  const n=document.getElementById('c-nombre').value;
+  const t=document.getElementById('c-tel').value;
+  const m=document.getElementById('c-msg').value;
+  window.open(`https://wa.me/50688139534?text=${encodeURIComponent(`Hola SOJIFAM 👋, soy *${n}*.\n📞 Teléfono: ${t}\n\n💬 ${m}`)}`,'_blank');
 }
 </script>
 </body>
 </html>
+
