@@ -249,6 +249,27 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-outline{width:100%;justify-content:center}
 }
+
+/* ── CLIENTES CORPORATIVOS ── */
+.clientes-bloque{margin-top:5rem;padding-top:4rem;border-top:1px solid rgba(245,166,35,0.15)}
+.clientes-bloque .section-tag{margin-bottom:.8rem}
+.clientes-bloque .section-title{margin-bottom:.6rem}
+.clientes-subtitulo{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:3rem;font-weight:300;letter-spacing:.3px}
+.clientes-track-wrap{position:relative;overflow:hidden;width:100%;padding:20px 0}
+.clientes-track-wrap::before,.clientes-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.clientes-track-wrap::before{left:0;background:linear-gradient(to right,var(--black),transparent)}
+.clientes-track-wrap::after{right:0;background:linear-gradient(to left,var(--black),transparent)}
+.clientes-track{display:flex;width:max-content;animation:scrollClientes 30s linear infinite}
+.clientes-track:hover{animation-play-state:paused}
+.cliente-chip{display:flex;align-items:center;gap:10px;padding:0 44px;cursor:default;white-space:nowrap}
+.cliente-nombre{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3.5vw,38px);letter-spacing:3.5px;color:rgba(255,255,255,0.18);transition:color .3s ease,text-shadow .3s ease}
+.cliente-chip:hover .cliente-nombre{color:var(--gold);text-shadow:0 0 30px rgba(242,179,0,0.45)}
+.cliente-sep{font-size:7px;color:rgba(245,166,35,0.3);line-height:1}
+.clientes-numeros{display:flex;justify-content:center;gap:3rem;margin-top:3.5rem;flex-wrap:wrap}
+.cliente-stat{text-align:center}
+.cliente-stat .num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold);line-height:1;letter-spacing:1px}
+.cliente-stat .lbl{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-top:4px}
+@keyframes scrollClientes{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 </style>
 </head>
 <body>
@@ -510,6 +531,48 @@ footer{background:var(--dark2);border-top:1px solid rgba(245,166,35,0.2);padding
     <div class="proyecto-card"><div class="proy-bg" style="background:linear-gradient(135deg,#1a2a2a,#2a1a1a)">🪟</div><div class="proy-overlay"></div><div class="proy-content"><div class="proy-tag">Acabados</div><div class="proy-title">Tapicheles y Cielo Raso</div><div class="proy-desc">Santa Ana — 2025</div></div></div>
     <div class="proyecto-card"><div class="proy-bg" style="background:linear-gradient(135deg,#2a2a1a,#1a2a2a)">⚡</div><div class="proy-overlay"></div><div class="proy-content"><div class="proy-tag">Electricidad</div><div class="proy-title">Instalación Eléctrica</div><div class="proy-desc">Escazú — 2025</div></div></div>
   </div>
+
+  <!-- CLIENTES CORPORATIVOS -->
+  <div class="clientes-bloque">
+    <div class="section-tag">16 años de trayectoria</div>
+    <h2 class="section-title">EMPRESAS QUE HAN <span class="gold">CONFIADO EN NOSOTROS</span></h2>
+    <p class="clientes-subtitulo">A lo largo de más de 16 años hemos tenido el honor de trabajar para algunas de las empresas más importantes de Costa Rica</p>
+
+    <div class="clientes-track-wrap">
+      <div class="clientes-track">
+        <!-- Set 1 -->
+        <div class="cliente-chip"><span class="cliente-nombre">Dos Pinos</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Taco Bell</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Embajada Americana</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Prysmian</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Baxter</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Boston Scientific</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Align</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">El Areo</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Pozuelo</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Mega Super</span><span class="cliente-sep">◆</span></div>
+        <!-- Set 2 — duplicado para loop infinito -->
+        <div class="cliente-chip"><span class="cliente-nombre">Dos Pinos</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Taco Bell</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Embajada Americana</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Prysmian</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Baxter</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Boston Scientific</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Align</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">El Areo</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Pozuelo</span><span class="cliente-sep">◆</span></div>
+        <div class="cliente-chip"><span class="cliente-nombre">Mega Super</span><span class="cliente-sep">◆</span></div>
+      </div>
+    </div>
+
+    <div class="clientes-numeros">
+      <div class="cliente-stat"><div class="num">16+</div><div class="lbl">Años de experiencia</div></div>
+      <div class="cliente-stat"><div class="num">10</div><div class="lbl">Grandes empresas</div></div>
+      <div class="cliente-stat"><div class="num">500+</div><div class="lbl">Proyectos realizados</div></div>
+      <div class="cliente-stat"><div class="num">100%</div><div class="lbl">Satisfacción garantizada</div></div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ══════════════════ GALERÍA ══════════════════ -->
